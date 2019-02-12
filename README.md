@@ -1,2 +1,5 @@
-# books
-Books that I read and practice in examples
+# 읽은 서적 정리
+-------------
+1. AgileJava(자바프로그래밍) / Jeff Langr 지음 / 권오근 편역 /교학사
+- 시작 : 2019.02.10 -
+
