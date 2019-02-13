@@ -1,5 +1,5 @@
 #! /bin/sh
-javac -cp "../jars/junit.jar" *.java
+javac -cp "../jars/junit.jar" studentinfo/*.java
 if [ $? -eq 0 ]; then
-java -cp ".:../jars/junit.jar" junit.textui.TestRunner AllTests
+java -cp ".:../jars/junit.jar" junit.textui.TestRunner studentinfo.AllTests
 fi
