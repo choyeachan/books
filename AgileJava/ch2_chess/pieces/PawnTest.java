@@ -1,4 +1,16 @@
-public class PawnTest extends junit.framework.TestCase {
+package pieces;
+
+import junit.framework.TestCase;
+import pieces.*;
+
+public class PawnTest extends TestCase {
+
+  private Pawn pawn;
+
+  public void setUp(){
+    pawn = new Pawn();
+  }
+
   public void testCreate(){
     final String white = "white";
     Pawn firstPawn = new Pawn(white);
@@ -10,6 +22,6 @@ public class PawnTest extends junit.framework.TestCase {
   }
 
   public void testCreateNoColorPawn(){
-	 Pawn pawn = new Pawn();
+	 pawn = new Pawn();
   }
 }
