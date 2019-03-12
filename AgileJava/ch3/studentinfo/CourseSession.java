@@ -8,12 +8,14 @@ import java.util.*;
  * @author Administrator
  */
 class CourseSession{
+	static final String NEWLINE = System.getProperty("line.separator");
+	static final String ROSTER_REPORT_HEADER = "Student" + NEWLINE + "-" + NEWLINE;
+	static final String ROSTER_REPORT_FOOTER = NEWLINE + "# studens = ";
 	private String department;
 	private String number;
 	private Date startDate;
 	private Date endDate;
   	private ArrayList<Student> students = new ArrayList<Student>();
-	 
 
 	CourseSession(String department, String number){
 		this.department = department;
@@ -57,6 +59,10 @@ class CourseSession{
 		return startDate;
 	}
 
+	ArrayList<Student> getAllStudents(){
+		return students;
+	}
+
 	/**
 	 * @return Date the last date of the course session
 	 */
@@ -76,15 +82,12 @@ class CourseSession{
 
 		buffer.append(ROSTER_REPORT_HEADER);
 
-		Student student = students.get(0);
-		buffer.append(student.getName());
-		buffer.append('\n');
+		for(Student student:students){
+			buffer.append(student.getName());
+			buffer.append(NEWLINE);
+		}
 
-		Student student = students.get(1);
-		buffer.append(student.getName());
-		buffer.append('\n');
-
-		buffer.append(ROSTER_REPORT_FOOTER + students.size() + '\n');
+		buffer.append(ROSTER_REPORT_FOOTER + students.size() + NEWLINE);
 
 		return buffer.toString();
 	}
